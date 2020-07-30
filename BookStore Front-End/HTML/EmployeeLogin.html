@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    <script src="../JS/EmployeeLogin.js"></script>
+
+    <style>
+      .top
+      {
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+        text-align: center;
+        color: brown;
+        font-weight: bold;
+      }
+
+      .middle
+      {
+        height: 70%;
+      }
+
+      html,body
+      {
+        height: 100%;
+      }
+      .cellWithPadding
+      {
+        padding: 10px;
+        text-align: right;
+      }
+      .cellWithPaddingNoCenter
+      {
+        padding: 10px;
+      }
+
+    </style>
+
+
+    <title>Log In to पुस्तक Shala</title>
+  </head>
+  <body style="background-image: url(../Pics/loginBG.png); background-position: center; background-repeat: repeat-y; background-size: cover;">
+    
+    <div class = "container mt-2 align-items-center">
+        <section class="row align-items-center" >
+            <div class="col-12"> 
+              <h1 class="top">पुस्तक<br>Shala</h1>
+            </div>
+        </section>
+    </div>
+    <hr>
+    <div class = "middle" >
+      <div class = "container mt-2 align-items-center">
+        <section class="row justify-content-center" >
+            <div class="col-5 mt-5 align-items-center" style="background-color:darksalmon;"> 
+              <br>
+              <h2 style="color: darkblue;">Log into Your Account</h2>
+              <br>
+              <br>
+              <br>
+              <form name="logInForm">
+                <table style="margin-left: 10%;">
+                  <tr>
+                    <td class="cellWithPadding"> 
+                      Username
+                    </td>
+                    <td class="cellWithPadding">
+                      <input type="text" id="username">
+                    </td>
+                  </tr>
+                  
+                  <tr>
+                    <td class="cellWithPadding">
+                      Password
+                    </td>
+                    <td class="cellWithPadding">
+                      <input type="password" id="password">
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><br></td>
+                    <td><p id="stat"></p></td>
+                  </tr>
+                  <tr>
+                    <td class="cellWithPadding">
+                      
+                    </td>
+                    <td class="cellWithPadding">
+                      <input style="background-color: burlywood;" type="button" value="Sign In" onclick="return signInUser()">
+                    </td>
+                  </tr>
+                </table>
+                <br>
+                <table style="margin-left: 10%;">
+                  <tr>
+                    <td class="cellWithPadding" >
+                      Don't Have an Account?
+                    </td>
+                    <td class="cellWithPaddingNoCenter" style="font-size: 18px; font-weight: bold;">
+                      <a style="color: black;" href="EmployeeSignUp.html">Sign Up</a>
+                    </td>
+                  </tr>
+                </table>
+                </form>
+            </div>
+        </section>
+      </div>
+
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+  </body>
+</html>

@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+    <script src="../JS/Profile.js"></script>
+
+    <style>
+
+        .headerCell{
+            padding-right: 15px;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            padding-left: 15px;
+            font-size: 15px;
+            border-right: 1px groove;
+        }
+
+        .infoOfSite
+        {
+            font-weight: bold;
+            color:darkred;
+        }
+
+        .footer
+        {
+            background-color:darkolivegreen; 
+            color: white; 
+            width: 100%;
+        }
+        .copyright
+        {
+            float: right;
+            font-size: small;
+            margin-right: 5px;
+        }
+
+        .slideShow
+        {
+            width: 100%;
+            height: 650px;
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
+        }
+
+        .socialCell
+        {
+            padding: 10px;
+        }
+
+        .belowCopy
+        {
+            margin-left: 10%;
+        }
+        .curvedInput
+        {
+            border-radius: 30px;
+            padding-left: 10px;
+            padding-right: 10px;
+            padding-top: 3px;
+            padding-bottom: 3px;
+        }
+
+
+
+    </style>
+    <title>पुस्तक Shala</title>
+  </head>
+  <body>
+    <div>
+        <div class="container mt-2 align-items-center">
+            <section class="row">
+                <div class="col-12">
+                    <table style="width: 100%;">
+                        <tr>
+                            <td style="width: 10%"> <img src="../Pics/Icon.png"> </td>
+                            <td style="width: 90%">
+                                <select name="options" id="option" style="width: 20%;" onchange="selectSet(this.value)">
+                                    <option value="Name">Search By Name</option>
+                                    <option value="Author">Search By Author</option>
+                                    <option value="Category">Search By Category</option>
+                                </select>
+                                <span id="inpBoxes">
+                                    <input type="text" placeholder="Search Box" id="search1" style="width: 60%;">
+                                </span>
+                                <button type="submit" style="width: 10%;" onclick="onSearchData()"><i class="fa fa-search"></i></button>
+                        </tr>
+                    </table>
+                </div>
+            </section>
+
+        </div>
+    </div>
+    <div style="background-color: aquamarine;">
+    <div class = "container mt-2 align-items-center">
+        <section class="row align-items-center" >
+            <div class="col-12"> 
+                <table>
+                  <tr>
+                    <td class="headerCell" ><a href="Home.html">Home</a></td>
+                    <td class="headerCell"><a href="AuthorBooks.html">Authors</a></td>
+                    <td class="headerCell"><a href="CategoryWise.html">Book By Category</a></td>
+                    <td class="headerCell"><a href="Order.html">Order</a></td>
+                    <td class="headerCell"><a href="Contact.html">Contact Us</a></td>
+                   <td class="headerCell"  style="border-left: 1px groove; background-color:darkkhaki;"> <a id="userTab">Sign In</a></td>
+                  </tr>
+                </table>
+            </div>
+        </section>
+    </div>
+    </div>
+    <div style="background-color: blue; color: white;text-align: center;">
+        <span> Due to Covid-19, all outlets are closed. However our online delivery option is open.</span>
+    </div>
+    <hr>
+    <div class="container mt-2 align-items-center">
+        <section class="row">
+            <div class="col-12">
+                <h2 id="Userrname"></h2>
+                Profile
+                <br>
+                <br>
+                <br>
+                <table>
+                    <tr>
+                        <th class="socialCell">Username</th>                  
+                        <td id="user" class="socialCell">Trial</td>
+                    </tr>
+                    <tr>
+                        <th class="socialCell">Password</th>
+                        <td class="socialCell"><input type="button" value="Change Present Password"  class="curvedInput" style="padding: 10px;" onclick="changePass()"></td>
+                    </tr>
+                    <tr>
+                        <td><a href="#" onclick="signOut()">Sign Out</a>
+                        </td>
+                    </tr>
+                </table>
+                <br>
+                <br>
+                <table id="passTable" style="display:none;">
+                    <tr>
+                        <td class="socialCell">
+                            Old Password
+                        </td>
+                        <td class="socialCell">
+                            <input type="password" id="oldPass">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="socialCell">
+                            New Password
+                        </td>
+                        <td class="socialCell">
+                            <input type="password" id="newPass">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="socialCell">
+                            Confirm Password
+                        </td>
+                        <td class="socialCell">
+                            <input type="password" id="confPass">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="socialCell">
+                            <input type="button" value="Change Password" class="curvedInput" onclick="updateUserss()">
+                        </td>
+                    </tr>
+                </table>
+
+                <br>
+                <br>
+                <h3>Your Orders</h3>
+                <br>
+                <br>
+                <table id="orderList">
+
+
+                </table>
+
+                
+
+
+
+
+            </div>
+        </section>
+    </div>
+
+    
+    <br>
+    <br>
+    <div class="footer">
+        <br>
+        <p class="belowCopy">
+        Connect with us on social media and Linked In
+        </p>
+        
+        <table style="margin-left: 10%;">  
+            
+            <tr>
+                <td class="socialCell">
+                    <a href="https://www.facebook.com/ankitjha2008/" target="_blank"><img src="../Pics/fb.png" height="30px;"></a>
+                    Facebook
+                </td>
+                <td class="socialCell">
+                    <a href="https://www.instagram.com/jha_kkass/" target="_blank"><img src="../Pics/insta.png" height="30px"></a>
+                    Instagram
+                </td>
+                <td class="socialCell"> 
+                    <a href="https://www.linkedin.com/in/ankit-jha-2008/" target="_blank"><img src="../Pics/linkedIn.png" height="30px"></a>
+                    Linked In
+                </td>
+            </tr>
+        </table>
+        <span class="copyright">&copy; Ankit Jha, All rights Reserved </span>
+        
+        <br>
+       
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+  </body>
+</html>

@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    <script src="../JS/SignUp.js">
+    </script>
+
+
+    <style>
+      .top
+      {
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+        text-align: center;
+        color: brown;
+        font-weight: bold;
+      }
+
+      .middle
+      {
+        height: 100%;
+      }
+
+      html,body
+      {
+        height: 100%;
+      }
+      .cellWithPadding
+      {
+        padding: 10px;
+        text-align: right;
+        font-size: 18px;
+      }
+      .cellWithPaddingNoCenter
+      {
+        padding: 10px;
+        
+      }
+
+    </style>
+
+
+    <title>Sign Up for पुस्तक Shala</title>
+  </head>
+  <body style="background-image: url(../Pics/loginBG.png); background-position: center; background-repeat: repeat-y; background-size: cover;">
+    
+    <div class = "container mt-2 align-items-center">
+        <section class="row align-items-center" >
+            <div class="col-12"> 
+              <h1 class="top">पुस्तक<br>Shala</h1>
+            </div>
+        </section>
+    </div>
+    <hr>
+    <div class = "middle" >
+      <div class = "container mt-2 align-items-center">
+        <section class="row justify-content-center" >
+            <div class="col-6 mt-5 align-items-center" style="background-color:darksalmon;"> 
+              <br>
+              <h2 style="color: darkblue;">Sign Up for your Account</h2>
+              <br>
+              <br>
+              <br>
+              <form name="signUpForm">
+                <table style="margin-left: 10%;">
+                  <tr>
+                    <td class="cellWithPadding"> 
+                      First Name
+                    </td>
+                    <td class="cellWithPaddingNoCenter">
+                      <input type="text" id="fName">
+                    </td>
+                  </tr>
+                  
+                  <tr>
+                    <td class="cellWithPadding">
+                      Last Name
+                    </td>
+                    <td class="cellWithPaddingNoCenter">
+                      <input type="text" id="lName">
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="cellWithPadding">Username</td>
+                    <td class="cellWithPaddingNoCenter"><input type="text" id="userName"></td>
+                  </tr>
+                  <tr>
+                    <td class="cellWithPadding">Password</td>
+                    <td class="cellWithPaddingNoCenter"><input type="password" id="pass"></td>
+                  </tr>
+                  <tr>
+                    <td class="cellWithPadding">Confirm Password</td>
+                    <td class="cellWithPaddingNoCenter"><input type="password" id="confPass"></td>
+                  </tr>
+                  <tr>
+                    <td class="cellWithPadding"><br></td>
+                    <td class="cellWithPaddingNoCenter"><p id="stat"></p></td>
+                  </tr>
+
+                  <tr>
+                    <td class="cellWithPadding">
+                      
+                    </td>
+                    <td class="cellWithPadding">
+                      <input style="background-color: burlywood;" type="button" value="Sign In" onclick="return signUpUser()">
+                    </td>
+                  </tr>
+                  
+
+                </table>
+                
+              </form>
+            </div>
+        </section>
+      </div>
+
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+  </body>
+</html>
