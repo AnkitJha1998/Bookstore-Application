@@ -2,7 +2,7 @@
  This application represents a book store's website. It has all the necessary features required to surf through books and order books on the website. The code comprises of HTML,CSS and Javascript based Front-End and a powerful Springboot-Based Backend. To get Started with the application, we need to click on Home.html in HTML folder to open up Client Side UI.For Opening up the admin or employee login portal, we need to use the EmployeeLogin.html Feature. There are 3 roles in this application. User, Employee and Admin. Let's Start with Client User here.
  
  
-## Version
+## Version v02
 Here we have come up with new version of Bookstore Application. Here, now you can see list of books in an all-new Design.
 
 
@@ -32,7 +32,7 @@ After Ordering, There is a feedback page.
 On the back end, The software is now thoroughly tested. Here is the test proof
 ![Coverage](https://user-images.githubusercontent.com/37044020/95499369-cfd3c600-09c2-11eb-829f-3687cc14c4fd.png)
 
-
+-------------------------------------------------------------------------------------------------------------------------------------------
 
 
 ## Client User
