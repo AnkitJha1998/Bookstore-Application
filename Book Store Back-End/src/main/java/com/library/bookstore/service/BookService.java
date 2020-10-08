@@ -1,6 +1,9 @@
-package com.library.bookstore;
+package com.library.bookstore.service;
 
 import org.springframework.data.repository.CrudRepository;
+
+import com.library.bookstore.BookCategory;
+import com.library.bookstore.entity.Book;
 
 public interface BookService extends CrudRepository<Book,Integer>{
 

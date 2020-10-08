@@ -1,4 +1,4 @@
-package com.library.bookstore;
+package com.library.bookstore.controller;
 
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,9 +8,14 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+
+import com.library.bookstore.BookCategory;
+import com.library.bookstore.entity.Book;
+import com.library.bookstore.service.BookService;
 
 
 @CrossOrigin(origins = "*", allowedHeaders = "*")
@@ -57,6 +62,15 @@ public class BookController {
 			return serv.findByAuthorLastName(lName);
 		else
 			return serv.findAll();
+	}
+	
+	@PutMapping("books")
+	public ResponseEntity<String> saveBookDetails(@RequestBody Book books)
+	{
+		serv.save(books);
+		return new ResponseEntity<String>("Book Details Updated", HttpStatus.ACCEPTED);
+		
+		//202
 	}
 	
 }

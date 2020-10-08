@@ -1,4 +1,4 @@
-package com.library.bookstore;
+package com.library.bookstore.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -11,6 +11,9 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+
+import com.library.bookstore.entity.Employee;
+import com.library.bookstore.service.EmployeeService;
 
 
 
@@ -38,11 +41,11 @@ public class EmployeeController {
 	@GetMapping("/employee/name")
 	public Iterable<Employee> searchByName(@RequestParam("firstName") String fName, @RequestParam("lastName")String lName)
 	{
-		if(lName.equals("")&& fName.equals(""))
+		if(lName==null&& fName==null)
 			return serv.findAll();
-		else if(lName.equals(""))
+		else if(lName==null)
 			return serv.findByEmpFirstName(fName);
-		else if(fName.equals(""))
+		else if(fName==null)
 			return serv.findByEmpLastName(lName);
 		else
 			return serv.findByEmpFirstNameAndEmpLastName(fName, lName);

@@ -1,4 +1,4 @@
-package com.library.bookstore;
+package com.library.bookstore.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -62,6 +62,7 @@ public class Transaction {
 	public void setAccepted(boolean accepted) {
 		this.accepted = accepted;
 	}
+	
 	
 	
 	

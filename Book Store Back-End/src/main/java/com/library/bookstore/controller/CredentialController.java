@@ -1,4 +1,4 @@
-package com.library.bookstore;
+package com.library.bookstore.controller;
 
 import java.util.Optional;
 
@@ -9,6 +9,9 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
+
+import com.library.bookstore.entity.Credentials;
+import com.library.bookstore.service.CredentialService;
 
 
 @CrossOrigin (origins = "*" , allowedHeaders = "*")
@@ -36,6 +39,7 @@ public class CredentialController {
 	@PostMapping("/credential")
 	public ResponseEntity<String> authenticateUser(@RequestBody Credentials cred)
 	{
+		System.out.println(cred.getUsername()+" "+cred.getPassword());
 		Optional<Credentials> check=serv.findById(cred.getUsername());
 		if(check.isEmpty())
 		{
@@ -43,6 +47,7 @@ public class CredentialController {
 		}
 		else
 		{
+			System.out.println("Accessed Here");
 			if(check.get().getPassword().equals(cred.getPassword()))
 				return new ResponseEntity<String>("Authentication Successful",HttpStatus.ACCEPTED);
 			//202

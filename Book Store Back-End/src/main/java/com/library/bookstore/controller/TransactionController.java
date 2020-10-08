@@ -1,4 +1,4 @@
-package com.library.bookstore;
+package com.library.bookstore.controller;
 
 import java.util.Optional;
 
@@ -12,6 +12,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
+
+import com.library.bookstore.entity.Transaction;
+import com.library.bookstore.service.TransactionService;
 
 @CrossOrigin(origins = "*", allowedHeaders = "*")
 @RestController

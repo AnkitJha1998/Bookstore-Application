@@ -1,6 +1,8 @@
-package com.library.bookstore;
+package com.library.bookstore.service;
 
 import org.springframework.data.repository.CrudRepository;
+
+import com.library.bookstore.entity.Employee;
 
 
 public interface EmployeeService extends CrudRepository<Employee, Integer> {

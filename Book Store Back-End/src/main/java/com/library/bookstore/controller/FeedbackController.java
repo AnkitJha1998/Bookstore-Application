@@ -1,0 +1,44 @@
+package com.library.bookstore.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.library.bookstore.entity.Feedback;
+import com.library.bookstore.service.FeedbackService;
+
+@CrossOrigin(origins = "*", allowedHeaders = "*")
+@RestController
+public class FeedbackController {
+	
+	@Autowired
+	private FeedbackService feedServ;
+	
+	@GetMapping("/feedback")
+	public Iterable<Feedback> getFeedback()
+	{
+		return feedServ.findAll();
+	}
+	
+	@PostMapping("/feedback")
+	public ResponseEntity<String> postFeedback(@RequestBody Feedback feedback)
+	{
+		feedServ.save(feedback);
+		return new ResponseEntity<String>("Saved Successfully ", HttpStatus.CREATED);
+		
+		//201
+	}
+	
+	@GetMapping("/feedback/{id}")
+	public  Iterable<Feedback> getBookFeedback(@PathVariable("id") int bookId)
+	{
+		return feedServ.findByBookId(bookId);
+	}
+
+}

@@ -1,4 +1,4 @@
-package com.library.bookstore;
+package com.library.bookstore.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -17,8 +17,6 @@ public class User {
 	private String userLastName;
 	private String credUser;
 	private String credPass;
-	private int penalty;
-	private int bookIssue;
 	public int getUserId() {
 		return userId;
 	}
@@ -44,18 +42,7 @@ public class User {
 	public void setCredUser(String credUser) {
 		this.credUser = credUser;
 	}
-	public int getPenalty() {
-		return penalty;
-	}
-	public void setPenalty(int penalty) {
-		this.penalty = penalty;
-	}
-	public int getBookIssue() {
-		return bookIssue;
-	}
-	public void setBookIssue(int bookIssue) {
-		this.bookIssue = bookIssue;
-	}
+	
 	public String getCredPass() {
 		return credPass;
 	}
