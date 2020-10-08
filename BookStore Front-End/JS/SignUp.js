@@ -104,9 +104,7 @@ function signUpUser()
         "userFirstName" : fName.value,
         "userLastName" : lName.value,
         "credUser" : userName.value,
-        "credPass" : pass.value,
-        "penalty" : 0,
-        "bookIssue" : 0
+        "credPass" : pass.value
     }
 
     );

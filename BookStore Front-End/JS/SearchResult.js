@@ -115,16 +115,23 @@ window.onload=function()
 
 
 }
-
+function loadBookInfo(bookIdSent)
+{
+    sessionStorage.setItem("bookId",bookIdSent);
+    window.location.href="../HTML/BookInfo.html";
+}
 
 function displayTable(list)
 {   
-    table.innerHTML="<tr><th class=\"tableCell\">Book Id</th><th class=\"tableCell\">Book Name</th><th class=\"tableCell\">Book Category</th><th class=\"tableCell\">Author</th><th class=\"tableCell\">Price</th></tr>";
+    //table.innerHTML="<tr><th class=\"tableCell\">Book Id</th><th class=\"tableCell\">Book Name</th><th class=\"tableCell\">Book Category</th><th class=\"tableCell\">Author</th><th class=\"tableCell\">Price</th></tr>";
+    table.innerHTML="";
     var innerHTMLStr="";
     for(var i=0;i<list.length;i++)
     {
-        innerHTMLStr+="<tr><td class=\"tableCell\">"+list[i].bookId+"</td><td class=\"tableCell\">"+list[i].bookName+"</td><td class=\"tableCell\">"+list[i].bookCategory+"</td><td class=\"tableCell\">"+list[i].authorFirstName+" "+list[i].authorLastName+"</td><td class=\"tableCell\">"+list[i].price+"</td></tr>";
+        //innerHTMLStr+="<tr><td class=\"tableCell\">"+list[i].bookId+"</td><td class=\"tableCell\">"+list[i].bookName+"</td><td class=\"tableCell\">"+list[i].bookCategory+"</td><td class=\"tableCell\">"+list[i].authorFirstName+" "+list[i].authorLastName+"</td><td class=\"tableCell\">"+list[i].price+"</td></tr>";
+        innerHTMLStr+="<hr><h4  class=\"listView\"><a href=\"#\" onclick=\"loadBookInfo("+list[i].bookId+")\">"+list[i].bookId+":"+list[i].bookName+"</a></h4><p class=\"listView\">Author: "+list[i].authorFirstName+" "+list[i].authorLastName+"<br>Genre : "+list[i].bookCategory+"<br>₹"+list[i].price+"</p>";
     }
+    innerHTMLStr+="<hr>";
     table.innerHTML+=innerHTMLStr;
 }
 

@@ -261,9 +261,7 @@ function updateUserss()
             "userFirstName" : userObj.userFirstName,
             "userLastName" : userObj.userLastName,
             "credUser" : userObj.credUser,
-            "credPass" : newPass.value,
-            "penalty" : userObj.penalty,
-            "bookIssue" : userObj.bookIssue 
+            "credPass" : newPass.value
         }
     );
     xmlObj.send(sendData);

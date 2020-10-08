@@ -1,4 +1,4 @@
-var bookName,bookCategory,authorFname,authorLname,price;
+var bookName,bookCategory,authorFname,authorLname,price,bDescription;
 function createCORSRequest(method,url)
 {
     var xhr = new XMLHttpRequest;
@@ -34,6 +34,7 @@ window.onload=function()
     authorFname=form["bAuthorFname"];
     authorLname=form["bAuthorLname"];
     price=form["bPrice"];
+    bDescription=document.getElementById("bDescription");
 
     document.getElementById("bName").addEventListener("keyup",enterKeyPressed);
     document.getElementById("bAuthorFname").addEventListener("keyup",enterKeyPressed);
@@ -108,9 +109,12 @@ function addBook()
         "bookCategory" : bookCategory.value,
         "authorFirstName" : authorFname.value,
         "authorLastName" : authorLname.value,
-        "price" : bPrice.value
+        "price" : bPrice.value,
+        "bookDesc" : bDescription.value,
+        "avgRating" : 0,
+        "ratingCount" : 0
     });
-
+    console.log(jsonStr);
     xmlObj.send(jsonStr);
 }
 

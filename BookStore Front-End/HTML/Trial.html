@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
-    <script src="../JS/AuthorInfo.js"></script>
+    <script src="../JS/Home.js"></script>
 
     <style>
 
@@ -62,17 +62,6 @@
             margin-left: 10%;
         }
 
-        .tableRes
-        {
-            padding: 13px;
-        }
-
-        .listView
-        {
-            margin-left: 10px;
-        }
-
-
 
     </style>
     <title>पुस्तक Shala</title>
@@ -89,7 +78,7 @@
                                 <select name="options" id="option" style="width: 20%;" onchange="selectSet(this.value)">
                                     <option value="Name">Search By Name</option>
                                     <option value="Author">Search By Author</option>
-                                    <option value="Category">Search By Genre</option>
+                                    <option value="Category">Search By Category</option>
                                 </select>
                                 <span id="inpBoxes">
                                     <input type="text" placeholder="Search Box" id="search1" style="width: 60%;">
@@ -106,16 +95,18 @@
     <div class = "container mt-2 align-items-center">
         <section class="row align-items-center" >
             <div class="col-12"> 
+                <span style="align-items: flex-end;"><a id="userTab">Sign In</a></span>
                 <table>
                   <tr>
-                    <td class="headerCell"> <a id="userTab">Sign In</a></td>
-                    <td class="headerCell" ><a href="Home.html">Home</a></td>
+                    <td class="headerCell" style="border-left: 1px groove; background-color:darkkhaki;"><a href="Home.html">Home</a></td>
                     <td class="headerCell"><a href="AuthorBooks.html">Authors</a></td>
-                    <td class="headerCell"><a href="CategoryWise.html">Book By Genre</a></td>
+                    <td class="headerCell"><a href="CategoryWise.html">Book By Category</a></td>
                     <td class="headerCell"><a href="Order.html">Order</a></td>
                     <td class="headerCell"><a href="Contact.html">Contact Us</a></td>
+                   
                   </tr>
                 </table>
+               
             </div>
         </section>
     </div>
@@ -124,18 +115,29 @@
         <span> Due to Covid-19, all outlets are closed. However our online delivery option is open.</span>
     </div>
     <hr>
+    <div class="w3-content w3-display-container">
+        <img src="../Pics/bookSS1.jpeg" class="slideShow w3-animate-right">
+        <img src="../Pics/bookSS2.jpg"  class="slideShow w3-animate-right">
+        
+        <img src="../Pics/bookSS3.png" class="slideShow w3-animate-right">
+        <img src="../Pics/bookSS4.jpg" class="slideShow w3-animate-right">
+        <button class="w3-button w3-black w3-display-left" onclick="nextOrPrev(-1)">&#10094;</button>
+        <button class="w3-button w3-black w3-display-right" onclick="nextOrPrev(1)">&#10095;</button>
+    </div>
 
-    <div class = "container mt-2 align-items-center">
-        <section class="row align-items-center" >
-            <div class="col-12"> 
-                <h2 id="authorName">Author Name</h2>
-                <br>
-                <h3>Books</h3>
-                <div id="bookDetail">
-                    
-                </table>
-            </div>
-        </section>
+    <div>
+        <div class = "container mt-2 align-items-center">
+            <section class="row align-items-center" >
+                <div class="infoOfSite col-12" > 
+                    <h3>पुस्तक Shala</h3>
+                    <span>We are a group of enthusiastic book readers who want people to read good books.
+                        Our Book collections house a great amount of interesting books for all age group and all kinds of categories for the books, handpicked by us.
+                        <br>
+                        Enjoy the list of books available and don't forget to subscribe on social platforms.
+                    </span>
+                </div>
+            </section>
+        </div>
     </div>
     <br>
     <br>

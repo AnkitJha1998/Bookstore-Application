@@ -66,6 +66,11 @@
         {
             padding: 15px;
         }
+        .tableStyleName
+        {
+            padding: 15px;
+            color:brown;
+        }
 
     </style>
     <title>पुस्तक Shala</title>
@@ -82,7 +87,7 @@
                                 <select name="options" id="option" style="width: 20%;" onchange="selectSet(this.value)">
                                     <option value="Name">Search By Name</option>
                                     <option value="Author">Search By Author</option>
-                                    <option value="Category">Search By Category</option>
+                                    <option value="Category">Search By Genre</option>
                                 </select>
                                 <span id="inpBoxes">
                                     <input type="text" placeholder="Search Box" id="search1" style="width: 60%;">
@@ -101,12 +106,13 @@
             <div class="col-12"> 
                 <table>
                   <tr>
+                    <td class="headerCell"> <a id="userTab">Sign In</a></td>
                     <td class="headerCell"><a href="Home.html">Home</a></td>
-                    <td class="headerCell" style="border-left: 1px groove; background-color:darkkhaki;"><a href="AuthorBook.html">Authors</a></td>
-                    <td class="headerCell"><a href="CategoryWise.html">Book By Category</a></td>
+                    <td class="headerCell" style="border-left: 1px groove; background-color:darkkhaki;"><a href="AuthorBooks.html">Authors</a></td>
+                    <td class="headerCell"><a href="CategoryWise.html">Book By Genre</a></td>
                     <td class="headerCell"><a href="Order.html">Order</a></td>
                     <td class="headerCell"><a href="Contact.html">Contact Us</a></td>
-                   <td class="headerCell"> <a id="userTab">Sign In</a></td>
+                    
                   </tr>
                 </table>
             </div>

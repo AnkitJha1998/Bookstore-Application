@@ -3,7 +3,8 @@ var users;
 var books;
 var table;
 var orders;
-
+var userIddd;
+var empIddd;
 
 function createCORSRequest(method,url)
 {
@@ -33,6 +34,7 @@ function loadBooks()
         {
             var jsonData=JSON.parse(this.responseText);
             books=jsonData;
+            
             loadUsers();
         }
     }
@@ -55,6 +57,7 @@ function loadUsers()
         {
             var jsonData=JSON.parse(this.responseText);
             users=jsonData;
+
             loadOrders();
         }
     }
@@ -121,6 +124,21 @@ function loadOrders()
     xmlObj.send();
 }
 
+function loadEmpId()
+{
+    var url="http://localhost:8080/employee/username/"+user;
+    var obj=createCORSRequest("GET",url);
+    obj.open("GET",url,true);
+    obj.onload=function()
+    {
+        if(this.readyState==4 && this.status==200)
+        {
+            var jsonData=JSON.parse(this.responseText);
+            empIddd=jsonData[0].empId;
+        }
+    }
+    obj.send();
+}
 
 window.onload=function()
 {
@@ -133,7 +151,7 @@ window.onload=function()
     table=document.getElementById("orders");
     table.innerHTML="<tr><th class=\"tableCell\">Order No</th><th class=\"tableCell\">User Full Name</th><th class=\"tableCell\">Book Name</th><th class=\"tableCell\">Author Name</th><th class=\"tableCell\">Book Price</th><th class=\"tableCell\">PayTM Transaction ID</th><th class=\"tableCell\"></th></tr>";
     loadBooks();
-    
+    loadEmpId();
 }
 
 function signOut()
@@ -176,7 +194,7 @@ function acceptOrder(id)
             "transId" : ordObj.transId,
             "userId" : ordObj.userId,
             "bookId" : ordObj.bookId,
-            "empId" : ordObj.empId,
+            "empId" : empIddd,
             "address" : ordObj.address,
             "paytmId" : ordObj.paytmId,
             "accepted" : 1

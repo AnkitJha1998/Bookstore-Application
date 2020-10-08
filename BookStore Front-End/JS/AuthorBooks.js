@@ -79,7 +79,7 @@ function displayTable()
     var tableStr="<tr><th class=\"tableStyle\">Author Name</th><th class=\"tableStyle\">Books Written</th></tr>";
     for(var i=0;i<list.length;i++)
     {
-        var str="<tr><td class=\"tableStyle\"><a href=\"#\" onclick=\"loadUpAuthor(" + i + ")\">"+ list[i][0]+" "+list[i][1] +"</a></td>" ;
+        var str="<tr><td class=\"tableStyleName\"><a href=\"#\" onclick=\"loadUpAuthor(" + i + ")\">"+ list[i][0]+" "+list[i][1] +"</a></td>" ;
         str+="<td class=\"tableStyle\">"+list[i][2]+"</td>";
         tableStr+=str;
     }

@@ -89,7 +89,7 @@ function onSelectChange(searchBox)
 
 function displayTable(list)
 {
-    tableRes.innerHTML="<tr><th class=\"tableCell\">Book Name</th><th class=\"tableCell\">Book Category</th><th class=\"tableCell\">Author</th><th class=\"tableCell\">Price</th></tr>";
+    tableRes.innerHTML="<tr><th class=\"tableCell\">Book Name</th><th class=\"tableCell\">Book Category</th><th class=\"tableCell\">Author</th><th class=\"tableCell\">Price</th><th class=\"tableCell\">Rating</th><th class=\"tableCell\">Description</th></tr>";
     headerTag.style.display="block"
     headerTag.innerHTML="Search Results";
     tableRes.style.display="block";
@@ -97,7 +97,7 @@ function displayTable(list)
     var innerHTMLStr="";
     for(var i=0;i<list.length;i++)
     {
-        innerHTMLStr+="<tr><td class=\"cellWithPadding\">"+list[i].bookName+"</td><td class=\"cellWithPadding\">"+list[i].bookCategory+"</td><td class=\"cellWithPadding\">"+list[i].authorFirstName+" "+list[i].authorLastName+"</td><td class=\"cellWithPadding\">"+list[i].price+"</td></tr>";
+        innerHTMLStr+="<tr><td class=\"cellWithPadding\">"+list[i].bookName+"</td><td class=\"cellWithPadding\">"+list[i].bookCategory+"</td><td class=\"cellWithPadding\">"+list[i].authorFirstName+" "+list[i].authorLastName+"</td><td class=\"cellWithPadding\">"+list[i].price+"</td><td class=\"cellWithPadding\">"+list[i].avgRating+"</td><td class=\"cellWithPadding\">"+list[i].bookDesc+"</td></tr>";
     }
     tableRes.innerHTML+=innerHTMLStr;
 

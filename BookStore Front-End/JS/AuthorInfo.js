@@ -61,6 +61,12 @@ function selectSet(item)
     }
 }
 
+function loadBookInfo(bookIdSent)
+{
+    sessionStorage.setItem("bookId",bookIdSent);
+    window.location.href="../HTML/BookInfo.html";
+}
+
 window.onload=onPageLoadFn;
 function onPageLoadFn()
 {
@@ -130,11 +136,14 @@ function bookList(fName,lName)
         if(this.readyState==4 && this.status==200)
         {
             var jsonData=JSON.parse(this.responseText);
-            var strTable="<tr><th class=\"tableRes\">Book Id</th><th class=\"tableRes\">Book Name</th><th class=\"tableRes\">Price</th></tr>";
+            //var strTable="<tr><th class=\"tableRes\">Book Id</th><th class=\"tableRes\">Book Name</th><th class=\"tableRes\">Price</th></tr>";
+            var strTable="";
             for(var i=0;i<jsonData.length;i++)
             {
-                strTable+="<tr><td class=\"tableRes\">"+jsonData[i].bookId+"</td><td class=\"tableRes\">" + jsonData[i].bookName + "</td><td class=\"tableRes\">" + jsonData[i].price + "</td></tr>";
+                //strTable+="<tr><td class=\"tableRes\">"+jsonData[i].bookId+"</td><td class=\"tableRes\">" + jsonData[i].bookName + "</td><td class=\"tableRes\">" + jsonData[i].price + "</td></tr>";
+                strTable+="<hr><h4  class=\"listView\"><a href=\"#\" onclick=\"loadBookInfo("+jsonData[i].bookId+")\">"+jsonData[i].bookId+":"+jsonData[i].bookName+"</a></h4><p class=\"listView\">Author: "+jsonData[i].authorFirstName+" "+jsonData[i].authorLastName+"<br>₹"+jsonData[i].price+"</p>"
             }
+            strTable+="<hr>"
             tableBooks.innerHTML=strTable;
         }
     };

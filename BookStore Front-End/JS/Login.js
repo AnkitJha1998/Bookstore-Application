@@ -97,6 +97,7 @@ function signInUser()
             "username" : username.value ,
             "password" : password.value
         });
+        console.log(jsonData);
         xmlObj.send(jsonData);
     
 }

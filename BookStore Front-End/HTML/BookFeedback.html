@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
-    <script src="../JS/AuthorInfo.js"></script>
+    <script src="../JS/BookFeedback.js"></script>
 
     <style>
 
@@ -62,17 +62,15 @@
             margin-left: 10%;
         }
 
-        .tableRes
+        .tableStyle
         {
-            padding: 13px;
+            padding: 15px;
         }
-
-        .listView
+        .tableStyleName
         {
-            margin-left: 10px;
+            padding: 15px;
+            color:brown;
         }
-
-
 
     </style>
     <title>पुस्तक Shala</title>
@@ -109,10 +107,10 @@
                 <table>
                   <tr>
                     <td class="headerCell"> <a id="userTab">Sign In</a></td>
-                    <td class="headerCell" ><a href="Home.html">Home</a></td>
-                    <td class="headerCell"><a href="AuthorBooks.html">Authors</a></td>
+                    <td class="headerCell"><a href="Home.html">Home</a></td>
+                    <td class="headerCell" ><a href="AuthorBook.html">Authors</a></td>
                     <td class="headerCell"><a href="CategoryWise.html">Book By Genre</a></td>
-                    <td class="headerCell"><a href="Order.html">Order</a></td>
+                    <td class="headerCell" ><a href="Order.html">Order</a></td>
                     <td class="headerCell"><a href="Contact.html">Contact Us</a></td>
                   </tr>
                 </table>
@@ -124,21 +122,38 @@
         <span> Due to Covid-19, all outlets are closed. However our online delivery option is open.</span>
     </div>
     <hr>
-
-    <div class = "container mt-2 align-items-center">
-        <section class="row align-items-center" >
-            <div class="col-12"> 
-                <h2 id="authorName">Author Name</h2>
+    
+    <div class="container mt-2">
+        <section class="row align-items-center">
+            <div class="col-12">
+                <h1>Thank you for placing the order</h1>
+                
+                <h4>Please give a moment to give us the rating of this book.</h4>
+                <br><br><hr><br>
+                
+                <p id="bookDet"></p>
+                <h2>How much did you like the book?</h2>
+                <div>
+                    <img id="pic1" src="../Pics/Star.png" onmouseover="colorImage(1)" onmouseout="normalStar(this)" onclick="selected(1)">
+                    <img id="pic2" src="../Pics/Star.png" onmouseover="colorImage(2)" onmouseout="normalStar(this)" onclick="selected(2)">
+                    <img id="pic3" src="../Pics/Star.png" onmouseover="colorImage(3)" onmouseout="normalStar(this)" onclick="selected(3)">
+                    <img id="pic4" src="../Pics/Star.png" onmouseover="colorImage(4)" onmouseout="normalStar(this)" onclick="selected(4)">
+                    <img id="pic5" src="../Pics/Star.png" onmouseover="colorImage(5)" onmouseout="normalStar(this)" onclick="selected(5)">
+                </div>
                 <br>
-                <h3>Books</h3>
-                <div id="bookDetail">
-                    
-                </table>
+                <h3>Additional Comments</h3>
+                <br>
+                <textarea class="col-8" id="comments" rows="6"></textarea>
+                <br>
+                <br>
+                <button id="submitFeedback" onclick="feedbackSubmit()">Submit Feedback</button>
+                <br>
+                <br>
             </div>
         </section>
     </div>
-    <br>
-    <br>
+
+    
     <div class="footer">
         <br>
         <p class="belowCopy">
@@ -168,10 +183,11 @@
        
     </div>
 
+
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
   </body>
 </html>

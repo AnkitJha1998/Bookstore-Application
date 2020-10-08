@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
-    <script src="../JS/AuthorInfo.js"></script>
+    <script src="../JS/BookInfo.js"></script>
 
     <style>
 
@@ -61,16 +61,31 @@
         {
             margin-left: 10%;
         }
-
-        .tableRes
+        .curvedInput
         {
-            padding: 13px;
+            border-radius: 30px;
+            padding-left: 10px;
+            padding-right: 10px;
+            padding-top: 3px;
+            padding-bottom: 3px;
         }
-
         .listView
         {
-            margin-left: 10px;
+            font-size: 13px;
         }
+
+        .bookView
+        {
+            padding: 10px;
+            font-size: 16px;
+            text-align: end;
+        }
+        .bookDetails
+        {
+            padding: 10px;
+        }
+        
+        
 
 
 
@@ -89,7 +104,7 @@
                                 <select name="options" id="option" style="width: 20%;" onchange="selectSet(this.value)">
                                     <option value="Name">Search By Name</option>
                                     <option value="Author">Search By Author</option>
-                                    <option value="Category">Search By Genre</option>
+                                    <option value="Category">Search By Category</option>
                                 </select>
                                 <span id="inpBoxes">
                                     <input type="text" placeholder="Search Box" id="search1" style="width: 60%;">
@@ -108,10 +123,10 @@
             <div class="col-12"> 
                 <table>
                   <tr>
-                    <td class="headerCell"> <a id="userTab">Sign In</a></td>
+                   <td class="headerCell" > <a id="userTab">Sign In</a></td>
                     <td class="headerCell" ><a href="Home.html">Home</a></td>
                     <td class="headerCell"><a href="AuthorBooks.html">Authors</a></td>
-                    <td class="headerCell"><a href="CategoryWise.html">Book By Genre</a></td>
+                    <td class="headerCell"><a href="CategoryWise.html">Book By Category</a></td>
                     <td class="headerCell"><a href="Order.html">Order</a></td>
                     <td class="headerCell"><a href="Contact.html">Contact Us</a></td>
                   </tr>
@@ -124,19 +139,94 @@
         <span> Due to Covid-19, all outlets are closed. However our online delivery option is open.</span>
     </div>
     <hr>
-
-    <div class = "container mt-2 align-items-center">
-        <section class="row align-items-center" >
-            <div class="col-12"> 
-                <h2 id="authorName">Author Name</h2>
+    <div class="container mt-2 align-items-center">
+        <section class="row">
+            <div class="col-12">
+                <h2 id="bookName">Book Name</h2>
+                <button id="buyBook" style="align-self: right;background-color: aquamarine;" >Buy The Book</button>
                 <br>
-                <h3>Books</h3>
-                <div id="bookDetail">
-                    
+                <hr>
+                <br>
+                <table >
+                    <tr>
+                        <td class="bookView">
+                            Book Id
+                        </td>
+                        <td id="bookId" class="bookDetails"> </td>
+                    </tr>
+                    <tr>
+                        <td class="bookView">
+                            Book Name
+                        </td>
+                        <td id="bookName1" class="bookDetails"></td>
+                        
+                    </tr>
+                    <tr>
+                        <td class="bookView">
+                            Genre
+                        </td>
+                        <td id="bookGenre" class="bookDetails">
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="bookView">
+                            Author
+                        </td>
+                        <td id="author" class="bookDetails">
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="bookView">
+                            Price (₹)                             
+                        </td>
+                        <td id="price" class="bookDetails">
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="bookView">
+                            Book Description
+                        </td>
+                        <td id="bookDesc" class="bookDetails">
+
+                        </td>
+                    </tr>
+                         
+                    <tr>
+                        <td class="bookView">
+                            Rating
+                        </td>
+                        <td id="rating" class="bookDetails">
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="bookView">
+                            Total Books Purchased
+                        </td>
+                        <td id="count" class="bookDetails">
+
+                        </td>
+                    </tr>
                 </table>
+                <br>
+                <hr>
+                <br>
+                <br>
+                <h3>Feedbacks of this book</h3>
+                <br>
+                <div id="feedbackSession">
+                    
+                </div>
+
+
             </div>
         </section>
     </div>
+
+    
     <br>
     <br>
     <div class="footer">

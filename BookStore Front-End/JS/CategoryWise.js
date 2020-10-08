@@ -86,6 +86,8 @@ function onPageLoadFn()
 
     tableRes=document.getElementById("resBooks");
     bookLoad("ACTION_ADVENTURE");
+
+    document.getElementById("bookCategory1").value="ACTION_ADVENTURE";
 }
 
 function onSearchData()
@@ -116,6 +118,12 @@ function onSearchData()
     }
 }
 
+function loadBookInfo(bookIdSent)
+{
+    sessionStorage.setItem("bookId",bookIdSent);
+    window.location.href="../HTML/BookInfo.html";
+}
+
 function bookLoad(categoryName)
 {
     var url="http://localhost:8080/books/category?category="+categoryName;
@@ -129,21 +137,22 @@ function bookLoad(categoryName)
             var tableStr="";
             if(jsonData==null)
             {
-                tableStr="<tr><td class=\"tablePad\"><h4 style=\"font-weight:bold;\">No Books Under this category</h4></td></tr>";
+                tableStr="<table><tr><td class=\"tablePad\"><h4 style=\"font-weight:bold;\">No Books Under this category</h4></td></tr><table>";
                 tableRes.innerHTML=tableStr;
             }
             else if(jsonData.length==0)
             {
-                tableStr="<tr><td class=\"tablePad\"><h4 style=\"font-weight:bold;\">No Books Under this category</h4></td></tr>";
+                tableStr="<table><tr><td class=\"tablePad\"><h4 style=\"font-weight:bold;\">No Books Under this category</h4></td></tr><table>";
                 tableRes.innerHTML=tableStr;
             }
             else
             {
-                tableStr="<tr><th class=\"tablePad\">Book Id</th><th class=\"tablePad\">Book Name</th><th class=\"tablePad\">Author</th><th class=\"tablePad\">Price</th></tr>";
+                tableStr="";
                 for(var i=0;i<jsonData.length;i++)
                 {
-                    tableStr+="<tr><td class=\"tablePad\">" + jsonData[i].bookId + "</td><td class=\"tablePad\">" + jsonData[i].bookName + "</td><td class=\"tablePad\">" + jsonData[i].authorFirstName + " " + jsonData[i].authorLastName + "</td><td class=\"tablePad\">" + jsonData[i].price + "</td></tr>";
+                    tableStr+="<hr><h4  class=\"listView\"><a href=\"#\" onclick=\"loadBookInfo("+jsonData[i].bookId+")\">"+jsonData[i].bookId+":"+jsonData[i].bookName+"</a></h4><p class=\"listView\">Author: "+jsonData[i].authorFirstName+" "+jsonData[i].authorLastName+"<br>Genre : "+jsonData[i].bookCategory+"<br>₹"+jsonData[i].price+"</p>";
                 }
+                tableStr+="<hr>";
                 tableRes.innerHTML=tableStr;
             }
         }
